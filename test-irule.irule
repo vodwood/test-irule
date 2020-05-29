@@ -1,6 +1,0 @@
-when CLIENT_ACCEPTED {
-  if {[active_members $blue_pool] < 1}{
-    pool $green_pool
-  } else {
-    pool $blue_pool
-}
