@@ -1,6 +1,15 @@
 when CLIENT_ACCEPTED {
-  if {[active_members $blue_pool] < 1}{
-    pool $green_pool
+  if {[active_members pool_sergeyv_api_blue] < 1}{
+    pool pool_sergeyv_api_green
   } else {
-    pool $blue_pool
+    pool pool_sergeyv_api_blue
+  }
+}
+
+when HTTP_REQUEST {
+  if {[active_members pool_sergeyv_api_blue] < 1}{
+    pool pool_sergeyv_api_green
+  } else {
+    pool pool_sergeyv_api_blue
+  }
 }
